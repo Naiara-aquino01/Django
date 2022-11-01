@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}Queen of Nails{% endblock %}
+{% block archivo_css %}
+<link rel="stylesheet" href="{% static 'blog/index.css' %}">
+<link rel="stylesheet" href="{ % static 'post.css' %}">
+<link rel="stylesheet" href="{% static 'blog/all-posts.css'%}">
+
+{% endblock  %}
+{% block contenido %}
+<section id="welcome">
+    <header>
+     <img src="{% static 'blog/images/portada.png' %}" alt="">
+     <h2>Queen Of Nails</h2>
+    </header>
+    <p>Bienvenidos a Queen of Nails, ventas oline de Insumos para uñas</p>
+    </section>
+    <section id='latest-posts'>
+       <h2>Nuevos lanzamientos</h2>
+       <ul> 
+        {% for producto  in  producto %}
+          {% include "blog/includes/post.html" %}
+        {% endfor %}           
+    </ul>
+    </section>
+    <section id="about">
+    <h2>Productos de Calidad</h2>
+    <p>¿Te encanta el color? ¿Estás obsesionada con el estilo? Si pusieras esa pasión por la moda en un frasco, obtendrías insumos para uñas de Queen of Nails. La vida está llena de momentos, aprovéchalos llevando uñas perfectas. Es por ello, que ofrecemos ventas oline, de productos de calidad de Insumos para Uñas</p>
+    </section>
+{% endblock  %}

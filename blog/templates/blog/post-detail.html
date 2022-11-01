@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %} {{producto.titulo}} {% endblock  %}
+
+{% block archivo_css %}
+<link rel="stylesheet" href="{% static 'blog/post-detail.css' %}">
+
+{% endblock  %}
+
+{% block contenido %}
+<section id="summary">
+    <h2>{{ producto.titulo }}</h2>
+    <article>
+    <img src="{% static producto.imagen %}" alt="">
+    <address> Precio: {{ producto.precio}} </address>
+    <div>
+    Marca: <time>{{ producto.marca }}</time>
+    </div>
+    </article>
+    </section>
+    <main>
+    <p>   
+        {{ producto.contenido }}
+    </p>
+    </main>
+{% endblock  %}
